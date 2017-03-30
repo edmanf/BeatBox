@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 /**
  * Created by t7500 on 3/30/2017.
@@ -38,5 +39,17 @@ public class BeatBoxFragment extends Fragment {
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 3));
 
         return view;
+    }
+
+    private class SoundHolder extends RecyclerView.ViewHolder {
+        private Button mButton;
+
+        public SoundHolder(LayoutInflater inflater, ViewGroup container) {
+            super(inflater.inflate(R.layout.list_item_sound, container, false));
+
+            mButton = (Button)itemView.findViewById(R.id.list_item_sound_button);
+        }
+
+
     }
 }
