@@ -29,7 +29,7 @@ public class BeatBox {
         // they usually point to same set of assets
         mAssets = context.getAssets();
 
-        // Deprecated method used for compatibility
+        // Deprecated method used for compatibility (our min is 16, new is L)
         mSoundPool = new SoundPool(MAX_SOUNDS, AudioManager.STREAM_MUSIC, 0);
         loadSounds();
     }
