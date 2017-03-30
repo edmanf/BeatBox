@@ -30,6 +30,7 @@ public class BeatBox {
     private void loadSounds() {
         String[] soundNames;
         try {
+            // list()) lists filenames contained in folderpath
             soundNames = mAssets.list(SOUNDS_FOLDER);
             Log.i(TAG, "Found " + soundNames.length + " sounds");
         } catch (IOException ioe) {

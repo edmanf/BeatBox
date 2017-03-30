@@ -16,6 +16,15 @@ import android.widget.Button;
 
 public class BeatBoxFragment extends Fragment {
 
+    private BeatBox mBeatBox;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        mBeatBox = new BeatBox(getActivity());
+    }
+
     /**
      * Returns a new instance of a BeatBoxFragment
      * @return a new BeatBoxFragment
