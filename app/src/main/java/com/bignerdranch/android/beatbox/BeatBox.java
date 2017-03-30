@@ -22,7 +22,7 @@ public class BeatBox {
     private static final int MAX_SOUNDS = 5;
 
     private AssetManager mAssets;
-    private List<Sound> mSounds;
+    private List<Sound> mSounds = new ArrayList<>();
     private SoundPool mSoundPool;
 
     public BeatBox(Context context) {
