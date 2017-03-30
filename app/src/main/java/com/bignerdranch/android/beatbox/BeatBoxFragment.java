@@ -50,7 +50,7 @@ public class BeatBoxFragment extends Fragment {
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 3));
 
         // Wire up the adapter
-        recyclerView.setAdapter(new SoundAdapter());
+        recyclerView.setAdapter(new SoundAdapter(mBeatBox.getSounds()));
 
         return view;
     }
