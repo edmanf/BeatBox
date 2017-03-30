@@ -38,6 +38,9 @@ public class BeatBoxFragment extends Fragment {
         // RecyclerView has a grid layout w/ 3 columns
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 3));
 
+        // Wire up the adapter
+        recyclerView.setAdapter(new SoundAdapter());
+
         return view;
     }
 
