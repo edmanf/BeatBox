@@ -2,6 +2,8 @@ package com.bignerdranch.android.beatbox;
 
 import android.content.Context;
 import android.content.res.AssetManager;
+import android.media.AudioManager;
+import android.media.SoundPool;
 import android.util.Log;
 
 import java.io.IOException;
@@ -13,21 +15,22 @@ import java.util.List;
  */
 
 public class BeatBox {
-    /** Constant for logging */
     private static final String TAG = "BeatBox";
 
-    /** Folder that sounds are saved in */
     private static final String SOUNDS_FOLDER = "sample_sounds";
+    private static final int MAX_SOUNDS = 5;
 
-    /** The asset manager used by this BeatBox to access assets */
     private AssetManager mAssets;
-
-    private List<Sound> mSounds = new ArrayList<Sound>();
+    private List<Sound> mSounds;
+    private SoundPool mSoundPool;
 
     public BeatBox(Context context) {
         // Usually don't need to worry about what context is passed in
         // they usually point to same set of assets
         mAssets = context.getAssets();
+
+        // Deprecated method used for compatibility
+        mSoundPool = new SoundPool(MAX_SOUNDS, AudioManager.STREAM_MUSIC, 0);
         loadSounds();
     }
 
