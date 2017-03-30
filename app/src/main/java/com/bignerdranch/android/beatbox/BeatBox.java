@@ -48,6 +48,10 @@ public class BeatBox {
             Sound sound = new Sound(assetPath);
             mSounds.add(sound);
         }
+
     }
 
+    public List<Sound> getSounds() {
+        return mSounds;
+    }
 }
