@@ -23,6 +23,13 @@ public class BeatBoxFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Retain the fragment to preserve sound playing
+        // FragmentManager destroys a frag's views first,
+        // frag manager then checks a frag's retainInstance to decide
+        // if it needs to destroy and re-create it
+        // frag's are only retiained if setRetainInstance(true)
+        // and host activity is being destroyed for a config change
         setRetainInstance(true);
 
         mBeatBox = new BeatBox(getActivity());
